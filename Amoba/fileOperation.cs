@@ -9,5 +9,13 @@ namespace Amoba
 {
     class fileOperation
     {
+        public static string desBeolvas(string filename)
+        {
+            StreamReader read = new StreamReader(filename, Encoding.Default);
+            string des = "";
+            while (!read.EndOfStream) des += read.ReadLine();
+            read.Close();
+            return des;
+        }
     }
 }

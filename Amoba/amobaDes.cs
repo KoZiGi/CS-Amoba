@@ -20,7 +20,7 @@ namespace Amoba
         private void amobaDes_Load(object sender, EventArgs e)
         {
             Label description = new Label();
-            description.Text=""
+            description.Text = fileOperation.desBeolvas("description.txt");
             
         }
     }
