@@ -33,4 +33,18 @@ C:\Users\ginalzsolt\Source\Repos\KoZiGi\CS-Amoba\Amoba\obj\Debug\Amoba.csproj.Co
 C:\Users\ginalzsolt\Source\Repos\KoZiGi\CS-Amoba\Amoba\obj\Debug\Amoba.exe
 C:\Users\ginalzsolt\Source\Repos\KoZiGi\CS-Amoba\Amoba\obj\Debug\Amoba.pdb
 >>>>>>> origin/main
+<<<<<<< HEAD
+D:\git\CS-Amoba\Amoba\bin\Debug\Amoba.exe.config
+D:\git\CS-Amoba\Amoba\bin\Debug\Amoba.exe
+D:\git\CS-Amoba\Amoba\bin\Debug\Amoba.pdb
+D:\git\CS-Amoba\Amoba\obj\Debug\Amoba.csprojAssemblyReference.cache
+D:\git\CS-Amoba\Amoba\obj\Debug\Amoba.amobaDes.resources
+D:\git\CS-Amoba\Amoba\obj\Debug\Amoba.Form1.resources
+D:\git\CS-Amoba\Amoba\obj\Debug\Amoba.Properties.Resources.resources
+D:\git\CS-Amoba\Amoba\obj\Debug\Amoba.csproj.GenerateResource.cache
+D:\git\CS-Amoba\Amoba\obj\Debug\Amoba.csproj.CoreCompileInputs.cache
+D:\git\CS-Amoba\Amoba\obj\Debug\Amoba.exe
+D:\git\CS-Amoba\Amoba\obj\Debug\Amoba.pdb
+=======
+>>>>>>> origin/main
 >>>>>>> origin/main
