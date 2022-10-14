@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="amobaDes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="amobaDes.Designer.cs">
+      <DependentUpon>amobaDes.cs</DependentUpon>
+    </Compile>
     <Compile Include="Data.cs" />
     <Compile Include="DisplayFuncs.cs" />
     <Compile Include="amobaDes.cs">

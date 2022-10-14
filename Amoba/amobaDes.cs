@@ -12,16 +12,53 @@ namespace Amoba
 {
     public partial class amobaDes : Form
     {
-        public amobaDes()
+        Form1 dx;
+        public amobaDes(Form1 d)
         {
+            dx = d;
             InitializeComponent();
         }
 
         private void amobaDes_Load(object sender, EventArgs e)
         {
-            Label description = new Label();
-            description.Text = fileOperation.desBeolvas("description.txt");
+            desLblGen();
+        }
+
+        private void mainpageBtn_Click(object sender, EventArgs e)
+        {
+            dx.Show();
+            Close();
+        }
+
+        private void driveBackBtn(Label des_lbl)
+        {
+            Button mainpageBtn = new Button()
+            {
+                Text = "Ready",
+                AutoSize = true,
+                Top = des_lbl.Height + 20,
+                Left = (des_lbl.Width / 2) + 10
+            };
+            mainpageBtn.Click += mainpageBtn_Click;
+            Controls.Add(mainpageBtn);
+        }
+
+        private void desLblGen()
+        {
+            Label des_lbl = new Label()
+            {
+                Text = makeItPrety(fileOperations.readDes("des.txt")),
+                AutoSize = true,
+                Top = 10,
+                Left = 10
+            };
+            Controls.Add(des_lbl);
+            driveBackBtn(des_lbl);
+        }
             
+        private string makeItPrety(string v)
+        {
+            return v.Replace(".", ".\n");
         }
     }
 }

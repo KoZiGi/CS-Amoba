@@ -32,6 +32,19 @@ C:\Users\ginalzsolt\Source\Repos\KoZiGi\CS-Amoba\Amoba\obj\Debug\Amoba.csproj.Ge
 C:\Users\ginalzsolt\Source\Repos\KoZiGi\CS-Amoba\Amoba\obj\Debug\Amoba.csproj.CoreCompileInputs.cache
 C:\Users\ginalzsolt\Source\Repos\KoZiGi\CS-Amoba\Amoba\obj\Debug\Amoba.exe
 C:\Users\ginalzsolt\Source\Repos\KoZiGi\CS-Amoba\Amoba\obj\Debug\Amoba.pdb
+<<<<<<< HEAD
+D:\asztalk_KD_git\Amoba\Amoba\bin\Debug\Amoba.exe.config
+D:\asztalk_KD_git\Amoba\Amoba\bin\Debug\Amoba.exe
+D:\asztalk_KD_git\Amoba\Amoba\bin\Debug\Amoba.pdb
+D:\asztalk_KD_git\Amoba\Amoba\obj\Debug\Amoba.csprojAssemblyReference.cache
+D:\asztalk_KD_git\Amoba\Amoba\obj\Debug\Amoba.amobaDes.resources
+D:\asztalk_KD_git\Amoba\Amoba\obj\Debug\Amoba.Form1.resources
+D:\asztalk_KD_git\Amoba\Amoba\obj\Debug\Amoba.Properties.Resources.resources
+D:\asztalk_KD_git\Amoba\Amoba\obj\Debug\Amoba.csproj.GenerateResource.cache
+D:\asztalk_KD_git\Amoba\Amoba\obj\Debug\Amoba.csproj.CoreCompileInputs.cache
+D:\asztalk_KD_git\Amoba\Amoba\obj\Debug\Amoba.exe
+D:\asztalk_KD_git\Amoba\Amoba\obj\Debug\Amoba.pdb
+=======
 >>>>>>> origin/main
 <<<<<<< HEAD
 D:\git\CS-Amoba\Amoba\bin\Debug\Amoba.exe.config
@@ -46,5 +59,6 @@ D:\git\CS-Amoba\Amoba\obj\Debug\Amoba.csproj.CoreCompileInputs.cache
 D:\git\CS-Amoba\Amoba\obj\Debug\Amoba.exe
 D:\git\CS-Amoba\Amoba\obj\Debug\Amoba.pdb
 =======
+>>>>>>> origin/main
 >>>>>>> origin/main
 >>>>>>> origin/main
