@@ -36,6 +36,9 @@ namespace Amoba
                 Game jatek = new Game(p1,p2);
                 jatek.Show();
             }
+            amobaDes desForm = new amobaDes(this);
+            this.Hide();
+            desForm.ShowDialog();
         }
     }
 }

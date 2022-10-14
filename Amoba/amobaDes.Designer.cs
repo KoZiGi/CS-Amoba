@@ -35,10 +35,10 @@ namespace Amoba
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(760, 118);
+            this.ClientSize = new System.Drawing.Size(740, 156);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "amobaDes";
-            this.Text = "Leírás";
+            this.Text = "amobaDes";
             this.Load += new System.EventHandler(this.amobaDes_Load);
             this.ResumeLayout(false);
 
