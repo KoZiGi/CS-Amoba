@@ -46,8 +46,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="amobaDes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="amobaDes.Designer.cs">
+      <DependentUpon>amobaDes.cs</DependentUpon>
+    </Compile>
     <Compile Include="Data.cs" />
     <Compile Include="DisplayFuncs.cs" />
+    <Compile Include="fileOperations.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -57,6 +64,9 @@
     <Compile Include="GameFuncs.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="amobaDes.resx">
+      <DependentUpon>amobaDes.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>

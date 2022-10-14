@@ -19,7 +19,9 @@ namespace Amoba
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-
+            amobaDes desForm = new amobaDes(this);
+            this.Hide();
+            desForm.ShowDialog();
         }
     }
 }
