@@ -13,7 +13,7 @@ namespace Amoba
     public partial class Game : Form
     {
         DisplayFuncs df = new DisplayFuncs();
-        public Game()
+        public Game(string player1, string player2)
         {
             InitializeComponent();
         }
