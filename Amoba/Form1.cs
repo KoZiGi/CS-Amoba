@@ -19,7 +19,7 @@ namespace Amoba
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            amobaDes des= new amobaDes();
+            amobaDes des= new amobaDes(this);
             des.Show();
         }
 
@@ -36,9 +36,7 @@ namespace Amoba
                 Game jatek = new Game(p1,p2);
                 jatek.Show();
             }
-            amobaDes desForm = new amobaDes(this);
-            this.Hide();
-            desForm.ShowDialog();
+            Hide();
         }
     }
 }
