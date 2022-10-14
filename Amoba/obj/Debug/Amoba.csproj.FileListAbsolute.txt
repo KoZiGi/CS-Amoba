@@ -9,4 +9,3 @@ C:\Users\zickbalazs\source\repos\Amoba\Amoba\obj\Debug\Amoba.csproj.GenerateReso
 C:\Users\zickbalazs\source\repos\Amoba\Amoba\obj\Debug\Amoba.csproj.CoreCompileInputs.cache
 C:\Users\zickbalazs\source\repos\Amoba\Amoba\obj\Debug\Amoba.exe
 C:\Users\zickbalazs\source\repos\Amoba\Amoba\obj\Debug\Amoba.pdb
-C:\Users\zickbalazs\source\repos\Amoba\Amoba\obj\Debug\Amoba.csprojAssemblyReference.cache
