@@ -47,7 +47,7 @@ namespace Amoba
         {
             Label des_lbl = new Label()
             {
-                Text = makeItPrety(fileOperations.readDes("des.txt")),
+                Text = makeItPrety(fileOperation.desBeolvas("des.txt")),
                 AutoSize = true,
                 Top = 10,
                 Left = 10

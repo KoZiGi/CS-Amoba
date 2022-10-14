@@ -29,6 +29,29 @@ namespace Amoba
 
             return fields;
         }
+        public static Button GenButton(EventHandler function, string name, string buttontext, int x, int y)
+        {
+            Button btn = new Button()
+            {
+                Name = name,
+                Text = buttontext,
+                Top = y,
+                Left = x,
+                Width = 60
+            };
+            btn.Click += function;
+            return btn;
+        }
+        public static Label GenLabel(string text, string name, int x, int y) 
+        {
+            return new Label()
+            {
+                Text = text,
+                Name = name,
+                Left = x,
+                Top = y
+            };
+        }
         private static Label GenField(int x, int y)
         {
             return new Label()

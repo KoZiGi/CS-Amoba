@@ -8,5 +8,15 @@ namespace Amoba
 {
     class GameFuncs
     {
+
+        public static void Surrender(object sender, EventArgs e)
+        {
+
+        }
+
+        public static void Reset(object sender, EventArgs e)
+        {
+
+        }
     }
 }
