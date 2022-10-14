@@ -55,7 +55,7 @@ namespace Amoba
             Controls.Add(des_lbl);
             driveBackBtn(des_lbl);
         }
-
+            
         private string makeItPrety(string v)
         {
             return v.Replace(".", ".\n");

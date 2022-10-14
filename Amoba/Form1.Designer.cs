@@ -80,6 +80,7 @@ namespace Amoba
             this.button1.TabIndex = 4;
             this.button1.Text = "Mehet";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // label3
             // 
@@ -115,6 +116,8 @@ namespace Amoba
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textBox1);
+            this.MaximumSize = new System.Drawing.Size(322, 234);
+            this.MinimumSize = new System.Drawing.Size(322, 234);
             this.Name = "Form1";
             this.Text = "Amőba";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
