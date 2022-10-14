@@ -12,9 +12,19 @@ namespace Amoba
 {
     public partial class Game : Form
     {
+        DisplayFuncs df = new DisplayFuncs();
         public Game()
         {
             InitializeComponent();
+        }
+
+        private void Game_Load(object sender, EventArgs e)
+        {
+            foreach (Label field in DisplayFuncs.GenFields())
+            {
+                Controls.Add(field);
+            }
+            Width = 23 * 20;
         }
     }
 }

@@ -1,0 +1,10 @@
+C:\Users\zickbalazs\Source\Repos\Amoba\Amoba\bin\Debug\Amoba.exe.config
+C:\Users\zickbalazs\Source\Repos\Amoba\Amoba\bin\Debug\Amoba.exe
+C:\Users\zickbalazs\Source\Repos\Amoba\Amoba\bin\Debug\Amoba.pdb
+C:\Users\zickbalazs\Source\Repos\Amoba\Amoba\obj\Debug\Amoba.csprojAssemblyReference.cache
+C:\Users\zickbalazs\Source\Repos\Amoba\Amoba\obj\Debug\Amoba.Game.resources
+C:\Users\zickbalazs\Source\Repos\Amoba\Amoba\obj\Debug\Amoba.Properties.Resources.resources
+C:\Users\zickbalazs\Source\Repos\Amoba\Amoba\obj\Debug\Amoba.csproj.GenerateResource.cache
+C:\Users\zickbalazs\Source\Repos\Amoba\Amoba\obj\Debug\Amoba.csproj.CoreCompileInputs.cache
+C:\Users\zickbalazs\Source\Repos\Amoba\Amoba\obj\Debug\Amoba.exe
+C:\Users\zickbalazs\Source\Repos\Amoba\Amoba\obj\Debug\Amoba.pdb

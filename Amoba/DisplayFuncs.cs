@@ -15,13 +15,13 @@ namespace Amoba
 
 
 
-        private List<Label> GenFields()
+        public static List<Label> GenFields()
         {
             List<Label> fields = new List<Label>();
 
-            for (int i = 1; i < 51; i++)
+            for (int i = 1; i < 21; i++)
             {
-                for (int g = 1; g < 51; g++)
+                for (int g = 1; g < 21; g++)
                 {
                     fields.Add(GenField(i, g));
                 }
@@ -29,15 +29,16 @@ namespace Amoba
 
             return fields;
         }
-        private Label GenField(int x, int y)
+        private static Label GenField(int x, int y)
         {
             return new Label()
             {
                 Name = $"FieldItem{x}{y}",
-                Top = 10 * y,
-                Left = 10 * x,
+                Top = 20 * y,
+                Left = 20 * x,
                 AutoSize = false,
-                Size = new Size(10, 10)
+                Size = new Size(20, 20),
+                BorderStyle = BorderStyle.FixedSingle
             };
 
 
