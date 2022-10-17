@@ -9,7 +9,7 @@ namespace Amoba
     class Data
     {
         public string[,] GameField = new string[20, 20];
-        
+        public string current, next;
         public Data(string[,] gf)
         {
             GameField = gf;

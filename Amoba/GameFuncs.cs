@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Windows.Forms;
 using System.Threading.Tasks;
 
 namespace Amoba
@@ -12,12 +13,13 @@ namespace Amoba
         
         public static void Surrender(object sender, EventArgs e)
         {
-
+            MessageBox.Show($"{data.current} feladta a játékot...\n{data.next} nyert!","Feladás");
+            Application.Exit();
         }
         //a
         public static void Reset(object sender, EventArgs e)
         {
-
+            Application.Restart();
         }
 
         private static string[,] GenField()
