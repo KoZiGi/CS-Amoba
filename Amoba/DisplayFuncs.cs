@@ -10,11 +10,21 @@ namespace Amoba
 {
     class DisplayFuncs
     {
+        public static void Display(Game game)
+        {
 
-
-
-
-
+            for (int i = 0; i < GameFuncs.data.GameField.GetLength(0) - 1; i++)
+            {
+                for (int g = 0; g < GameFuncs.data.GameField.GetLength(1) - 1; g++)
+                {
+                    Label l = game.Controls.Find($"_{i}-{g}", true)[0] as Label;
+                    l.Text = GameFuncs.data.GameField[i, g];
+                    if (l.Text == "X") l.ForeColor = Color.HotPink;
+                    else l.ForeColor = Color.Black;
+                    l.TextAlign = ContentAlignment.MiddleCenter;
+                }
+            }
+        }
         public static List<Label> GenFields()
         {
             List<Label> fields = new List<Label>();
@@ -54,18 +64,17 @@ namespace Amoba
         }
         private static Label GenField(int x, int y)
         {
-            return new Label()
+            Label lbl = new Label()
             {
-                Name = $"FieldItem{x}{y}",
+                Name = $"_{x}-{y}",
                 Top = 20 * y,
                 Left = 20 * x,
                 AutoSize = false,
                 Size = new Size(20, 20),
                 BorderStyle = BorderStyle.FixedSingle
             };
-
-
-
+            lbl.Click += GameFuncs.Add;
+            return lbl;
         }
     }
 }

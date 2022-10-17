@@ -13,17 +13,18 @@ namespace Amoba
     public partial class Game : Form
     {
         private static string p1, p2;
-
-
-
-
+        private static GameFuncs GameFuncs;
         public Game(string player1, string player2)
         {
+            GameFuncs = new GameFuncs(this);
             p1 = player1;
             p2 = player2;
             InitializeComponent();
         }
-
+        public void Display()
+        {
+            
+        }
         private void Game_Load(object sender, EventArgs e)
         {
             AddControls();
@@ -41,7 +42,7 @@ namespace Amoba
         private void ShowButtons()
         {
             Controls.Add(DisplayFuncs.GenButton(GameFuncs.Surrender, "SurrBtn",  "Feladás", 20, (20 * 22) - 15));
-            Controls.Add(DisplayFuncs.GenButton(GameFuncs.Surrender, "RemakeBtn", "Újrakezdés", Controls.Find("FieldItem2020", true)[0].Left - 40, (20 * 22) - 15));
+            Controls.Add(DisplayFuncs.GenButton(GameFuncs.Surrender, "RemakeBtn", "Újrakezdés", Controls.Find("_20-20", true)[0].Left - 40, (20 * 22) - 15));
         }
         private void ShowLabels()
         {
