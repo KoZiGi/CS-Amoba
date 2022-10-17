@@ -8,5 +8,12 @@ namespace Amoba
 {
     class Data
     {
+        public string[,] GameField = new string[20, 20];
+        
+        public Data(string[,] gf)
+        {
+            GameField = gf;
+        }
+
     }
 }

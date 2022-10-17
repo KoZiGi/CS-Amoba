@@ -13,6 +13,10 @@ namespace Amoba
     public partial class Game : Form
     {
         private static string p1, p2;
+
+
+
+
         public Game(string player1, string player2)
         {
             p1 = player1;
