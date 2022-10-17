@@ -13,15 +13,16 @@ namespace Amoba
         public static void Display(Game game)
         {
 
-            for (int i = 0; i < GameFuncs.data.GameField.GetLength(0) - 1; i++)
+            for (int i = 1; i < GameFuncs.data.GameField.GetLength(0)-1; i++)
             {
-                for (int g = 0; g < GameFuncs.data.GameField.GetLength(1) - 1; g++)
+                for (int g = 1; g < GameFuncs.data.GameField.GetLength(1)-1; g++)
                 {
-                    Label l = game.Controls.Find($"_{i}-{g}", true)[0] as Label;
-                    l.Text = GameFuncs.data.GameField[i, g];
-                    if (l.Text == "X") l.ForeColor = Color.HotPink;
-                    else l.ForeColor = Color.Black;
-                    l.TextAlign = ContentAlignment.MiddleCenter;
+                    Control l = game.Controls.Find($"_{i}-{g}", true)[0];
+                    Label x = l as Label;
+                    x.Text = GameFuncs.data.GameField[i, g];
+                    if (x.Text == "X") x.ForeColor = Color.HotPink;
+                    else x.ForeColor = Color.Black;
+                    x.TextAlign = ContentAlignment.MiddleCenter;
                 }
             }
         }
