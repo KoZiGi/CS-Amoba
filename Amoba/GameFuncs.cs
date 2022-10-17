@@ -13,7 +13,7 @@ namespace Amoba
         {
 
         }
-
+        //a
         public static void Reset(object sender, EventArgs e)
         {
 
