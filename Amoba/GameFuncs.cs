@@ -18,5 +18,20 @@ namespace Amoba
         {
 
         }
+        public static List<string> PlayerRandomizer(string p1,string p2)
+        {
+            List<string> players = new List<string>();
+            if (new Random().Next(1,3)==1)
+            {
+                players.Add(p1);
+                players.Add(p2);
+            }
+            else
+            {
+                players.Add(p2);
+                players.Add(p1);
+            }
+            return players;
+        }
     }
 }
