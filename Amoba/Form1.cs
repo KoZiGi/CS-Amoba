@@ -19,7 +19,24 @@ namespace Amoba
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
+            amobaDes des= new amobaDes(this);
+            des.Show();
+        }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            string p1 = textBox1.Text;
+            string p2 = textBox2.Text;
+            if (p1==p2)
+            {
+                MessageBox.Show("Nem egyezhet a két játékos neve","Hibás nevek",MessageBoxButtons.OK,MessageBoxIcon.Error);
+            }
+            else
+            {
+                Game jatek = new Game(p1,p2);
+                jatek.Show();
+            }
+            Hide();
         }
     }
 }

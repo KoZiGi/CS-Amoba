@@ -1,7 +1,7 @@
 ﻿
 namespace Amoba
 {
-    partial class amobaDes
+    partial class Game
     {
         /// <summary>
         /// Required designer variable.
@@ -31,15 +31,14 @@ namespace Amoba
         {
             this.SuspendLayout();
             // 
-            // amobaDes
+            // Game
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(740, 156);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Name = "amobaDes";
-            this.Text = "amobaDes";
-            this.Load += new System.EventHandler(this.amobaDes_Load);
+            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Name = "Game";
+            this.Text = "Game";
+            this.Load += new System.EventHandler(this.Game_Load);
             this.ResumeLayout(false);
 
         }
