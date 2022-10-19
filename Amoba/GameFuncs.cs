@@ -33,7 +33,7 @@ namespace Amoba
         }
         public static void Surrender(object sender, EventArgs e)
         {
-            MessageBox.Show($"{(data.IsItX ? data.X : data.O)} feladta a játékot...\n{(data.IsItX ? data.O : data.X)} nyert!","Feladás");
+            MessageBox.Show($"{(data.IsItX ? data.X : data.O)} feladta a játékot...\n{(data.IsItX ? data.O : data.X)} nyert!", "Feladás");
             Application.Exit();
         }
         public static void Add(object sender, EventArgs e)
@@ -45,10 +45,10 @@ namespace Amoba
                 data.GameField[x, y] = data.IsItX ? "X" : "O";
                 data.IsItX = !data.IsItX;
                 DisplayFuncs.Display(game);
-                
+
             }
             else _this.Cursor = Cursors.No;
-            
+
         }
         public static void Reset(object sender, EventArgs e)
         {
@@ -70,97 +70,129 @@ namespace Amoba
 
         public static bool WinCheck()
         {
-            bool isWin = rowSelect(data.GameField, data.IsItX?"X":"O");
+            bool isWin = colSelect(data.GameField, data.IsItX ? "X" : "O");
             return isWin;
         }
 
-        private static bool rowSelect(string[,] gameField, string userSymbol)
+        private static bool colSelect(string[,] gameField, string userSymbol)
         {
-            for (int i = 0; i < gameField.GetLength(0); i++)
+            for (int row = 0; row < gameField.GetLength(0); row++) if (rowSelect(gameField, userSymbol, row)) return true;
+            return false;
+        }
+
+        private static bool rowSelect(string[,] gameField, string userSymbol, int row)
+        {
+            for (int col = 0; col < gameField.GetLength(1); col++) if (selectedCheck(gameField, userSymbol, row, col)) return true;
+            return false;
+        }
+
+        private static bool selectedCheck(string[,] gameField, string userSymbol, int row, int col)
+        {
+            if (gameField[row, col] == userSymbol)
             {
-                if (colSelect(i, gameField, userSymbol)) return true; 
+                if (checkVertical(gameField, userSymbol, row, col)) return true;
+                if (checkHorizontal(gameField, userSymbol, row, col)) return true;
+                if (checkDiagonalLeft(gameField, userSymbol, row, col)) return true;
+                if (checkDiagonalRight(gameField, userSymbol, row, col)) return true;
             }
             return false;
         }
 
-        private static bool colSelect(int row, string[,] gameField, string userSymbol)
+        private static bool checkDiagonalRight(string[,] gameField, string userSymbol, int row, int col)
         {
-            for (int col = 0; col < gameField.GetLength(1); col++)
+            try
             {
-                if (gameField[row, col] == userSymbol) return AllWayChecker(row, col, userSymbol, gameField);
+                int localCol = col + 1;
+                for (int i = row + 1; i < row + 4; i++)
+                {
+                    if (gameField[row, i] != userSymbol) return false;
+                    localCol++;
+                }
             }
-            return false;
-        }
-
-        private static bool AllWayChecker(int row, int col, string userSymbol, string[,] gameField)
-        {
-            if (Check_Vert(row, col, userSymbol, gameField)) return true;
-            if (Check_Hori(row, col, userSymbol, gameField)) return true;
-            if (Check_Diag(row, col, userSymbol, gameField)) return true;
-            return false;
-        }
-
-        private static bool Check_Diag(int row, int col, string userSymbol, string[,] gameField)
-        {   
-            if (Diag_upLeft_downRight(row, col, userSymbol, gameField)) return true; //left up, right down check
-            if (Diag_upRight_downLeft(row, col, userSymbol, gameField)) return true; //right up, left down check
-            return false;
-        }
-
-        private static bool Diag_upRight_downLeft(int row, int col, string userSymbol, string[,] gameField)
-        {
-            bool isStillGood = true;
-            int Row = row;
-            for (int i = col + 1; i < 3; i++)    //check the field Diagonal up right start at rowIndex,colIndex
+            catch (Exception)
             {
-                if (gameField[Row, i] != userSymbol || gameField[Row, i] == "") isStillGood = false;
-                Row--;
+                try
+                {
+                    int localCol = col + 1;
+                    for (int i = row - 1; i < row - 4; i--)
+                    {
+                        if (gameField[row, i] != userSymbol) return false;
+                        localCol++;
+                    }
+                }
+                catch (Exception)
+                { }
+                return true;
             }
-            if (isStillGood) return true;
-            Row = row;
-            for (int i = col - 1; i < 3; i--)    //check the field Diagonal left down start at rowIndex,colIndex
-            {
-                if (gameField[Row, i] != userSymbol || gameField[Row, i] == "") isStillGood = false;
-                Row++;
-            }
-            return isStillGood;
+            return true;
         }
 
-        private static bool Diag_upLeft_downRight(int row, int col, string userSymbol, string[,] gameField)
+        private static bool checkDiagonalLeft(string[,] gameField, string userSymbol, int row, int col)
         {
-            bool isStillGood = true;
-            int Row = row;
-            for (int i = col-1; i < 3; i--)    //check the field Diagonal up left start at rowIndex,colIndex
+            try
             {
-                if (gameField[Row, i] != userSymbol || gameField[Row, i] == "") isStillGood = false;
-                Row--;
+                int localCol = col+1;
+                for (int i = row -1; i < row - 4; i--)
+                {
+                    if (gameField[row, localCol] != userSymbol) return false;
+                    localCol++;
+                } 
             }
-            if (isStillGood) return true;
-            Row = row;
-            for (int i = col + 1; i < 3; i++)    //check the field Diagonal right down start at rowIndex,colIndex
+            catch (Exception)
             {
-                if (gameField[Row, i] != userSymbol || gameField[Row, i] == "") isStillGood = false;
-                Row++;
+                try
+                {
+                    int localCol = col - 1;
+                    for (int i = row - 1; i < row - 4; i--)
+                    {
+                        if (gameField[row, localCol] != userSymbol) return false;
+                        localCol--;
+                    }
+                }
+                catch (Exception)
+                { }
+                return true;
             }
-            return isStillGood;
+            return true;
         }
 
-        private static bool Check_Hori(int row, int col, string userSymbol, string[,] gameField)   //checks the field horizontaly starting at rowIndex;colIndex
+        private static bool checkHorizontal(string[,] gameField, string userSymbol, int row, int col)
         {
-            bool stillGood = true;
-            for (int i = col + 1; i < 3; i++) if (gameField[row, i] != userSymbol || gameField[row, i] == "") stillGood = false; //checking forward
-            if (stillGood) return true;
-            for (int i = col - 1; i < 3; i--) if (gameField[row, i] != userSymbol || gameField[row, i] == "") stillGood = false; //checking backward
-            return stillGood;
+            try
+            {
+                for (int i = col + 1; i < col + 4; i++) if (gameField[row, i] != userSymbol) return false;
+            }
+            catch (Exception)
+            {
+                try
+                {
+                    for (int i = col - 1; i < col - 4; i--) if (gameField[row, i] != userSymbol) return false;
+                }
+                catch (Exception)
+                { }
+                return true;
+            }
+            return true;
         }
 
-        private static bool Check_Vert(int row, int col, string userSymbol, string[,] gameField)   //checks the field verticaly starting at rowIndex;colIndex
+        private static bool checkVertical(string[,] gameField, string userSymbol, int row, int col)
         {
-            bool stillGood = true;
-            for (int i = row+1; i < 3; i++) if (gameField[i, col] != userSymbol || gameField[i, col] == "") stillGood = false; //checking upwards
-            if (stillGood) return true;
-            for (int i = row-1; i < 3; i--) if (gameField[i, col] != userSymbol || gameField[i,col]=="") stillGood = false; //checking downwards
-            return stillGood;
+            try
+            {
+                for (int i = row + 1; i < row + 4; i++) if (gameField[i, col] != userSymbol) return false;
+            }
+            catch (Exception)
+            {
+                try
+                {
+                    for (int i = row - 1; i < row - 4; i--) if (gameField[i, col] != userSymbol) return false;
+                }
+                catch (Exception)
+                {}
+                return true;
+            }
+            return true;
         }
     }
 }
+
