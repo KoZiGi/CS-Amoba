@@ -66,6 +66,11 @@ namespace Amoba
                 Top = y
             };
         }
+        public static bool OpenFile()
+        {
+            DialogResult dialog = MessageBox.Show("Mentettem egy fájlt a játszmáról a dokumentumokba. Szeretnéd megnyitni?", "Játszma vége", MessageBoxButtons.YesNo);
+            return dialog == DialogResult.Yes;
+        }
         private static Label GenField(int x, int y)
         {
             Label lbl = new Label()
