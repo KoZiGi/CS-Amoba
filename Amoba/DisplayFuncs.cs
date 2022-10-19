@@ -24,6 +24,10 @@ namespace Amoba
                     x.TextAlign = ContentAlignment.MiddleCenter;
                 }
             }
+            if (GameFuncs.WinCheck())
+            {
+                MessageBox.Show("Győztünk");
+            }
         }
         public static List<Label> GenFields()
         {

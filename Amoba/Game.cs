@@ -17,6 +17,11 @@ namespace Amoba
         {
             AssignPlayers(player1, player2);
             InitializeComponent();
+            FormClosing += Closet;
+        }
+        private void Closet(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
         private void AssignPlayers(string player1, string player2)
         {
