@@ -78,14 +78,14 @@ namespace Amoba
             int Row = row;
             for (int i = col + 1; i < 3; i++)    //check the field Diagonal up right start at rowIndex,colIndex
             {
-                if (gameField[Row, i] != userSymbol) isStillGood = false;
+                if (gameField[Row, i] != userSymbol || gameField[Row,i]=="") isStillGood = false;
                 Row--;
             }
             if (isStillGood) return true;
             Row = row;
             for (int i = col - 1; i < 3; i--)    //check the field Diagonal left down start at rowIndex,colIndex
             {
-                if (gameField[Row, i] != userSymbol) isStillGood = false;
+                if (gameField[Row, i] != userSymbol || gameField[Row,i]=="") isStillGood = false;
                 Row++;
             }
             return isStillGood;
@@ -97,14 +97,14 @@ namespace Amoba
             int Row = row;
             for (int i = col-1; i < 3; i--)    //check the field Diagonal up left start at rowIndex,colIndex
             {
-                if (gameField[Row, i] != userSymbol) isStillGood = false;
+                if (gameField[Row, i] != userSymbol || gameField[Row, i]=="") isStillGood = false;
                 Row--;
             }
             if (isStillGood) return true;
             Row = row;
             for (int i = col + 1; i < 3; i++)    //check the field Diagonal right down start at rowIndex,colIndex
             {
-                if (gameField[Row, i] != userSymbol) isStillGood = false;
+                if (gameField[Row, i] != userSymbol || gameField[Row, i]=="") isStillGood = false;
                 Row++;
             }
             return isStillGood;
@@ -113,18 +113,18 @@ namespace Amoba
         private bool Check_Hori(int row, int col, string userSymbol, string[,] gameField)   //checks the field horizontaly starting at rowIndex;colIndex
         {
             bool stillGood = true;
-            for (int i = col + 1; i < 3; i++) if (gameField[row, i] != userSymbol) stillGood = false; //checking forward
+            for (int i = col + 1; i < 3; i++) if (gameField[row, i] != userSymbol && gameField[row, i]=="") stillGood = false; //checking forward
             if (stillGood) return true;
-            for (int i = col - 1; i < 3; i--) if (gameField[row, i] != userSymbol) stillGood = false; //checking backward
+            for (int i = col - 1; i < 3; i--) if (gameField[row, i] != userSymbol && gameField[row, i] == "") stillGood = false; //checking backward
             return stillGood;
         }
 
         private bool Check_Vert(int row, int col, string userSymbol, string[,] gameField)   //checks the field verticaly starting at rowIndex;colIndex
         {
             bool stillGood = true;
-            for (int i = row+1; i < 3; i++) if (gameField[i, col] != userSymbol) stillGood = false; //checking upwards
+            for (int i = row+1; i < 3; i++) if (gameField[i, col] != userSymbol && gameField[i,col] =="") stillGood = false; //checking upwards
             if (stillGood) return true;
-            for (int i = row-1; i < 3; i--) if (gameField[i, col] != userSymbol) stillGood = false; //checking downwards
+            for (int i = row-1; i < 3; i--) if (gameField[i, col] != userSymbol && gameField[i, col] =="") stillGood = false; //checking downwards
             return stillGood;
         }
     }
