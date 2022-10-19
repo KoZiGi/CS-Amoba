@@ -16,9 +16,24 @@ namespace Amoba
             data = new Data(GenField());
             game = g;
         }
+        public static List<string> PlayerRandomizer(string p1, string p2)
+        {
+            List<string> players = new List<string>();
+            if (new Random().Next(1, 3) == 1)
+            {
+                players.Add(p1);
+                players.Add(p2);
+            }
+            else
+            {
+                players.Add(p2);
+                players.Add(p1);
+            }
+            return players;
+        }
         public static void Surrender(object sender, EventArgs e)
         {
-            MessageBox.Show($"{(data.IsItX?"X":"O")} feladta a játékot...\n{(data.IsItX ? "O" : "X")} nyert!","Feladás");
+            MessageBox.Show($"{(data.IsItX ? data.X : data.O)} feladta a játékot...\n{(data.IsItX ? data.O : data.X)} nyert!","Feladás");
             Application.Exit();
         }
         public static void Add(object sender, EventArgs e)
