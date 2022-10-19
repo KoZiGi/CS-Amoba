@@ -18,7 +18,7 @@ namespace Amoba
         }
         public static void Surrender(object sender, EventArgs e)
         {
-            MessageBox.Show($"{(data.IsItX?"X":"O")} feladta a játékot...\n{(data.IsItX?"O":"X")} nyert!","Feladás");
+            MessageBox.Show($"{(data.IsItX?"X":"O")} feladta a játékot...\n{(data.IsItX ? "O" : "X")} nyert!","Feladás");
             Application.Exit();
         }
         public static void Add(object sender, EventArgs e)
