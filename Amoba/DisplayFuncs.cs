@@ -12,10 +12,9 @@ namespace Amoba
     {
         public static void Display(Game game)
         {
-
-            for (int i = 1; i < GameFuncs.data.GameField.GetLength(0)-1; i++)
+            for (int i = 1; i < GameFuncs.data.GameField.GetLength(0)-2; i++)
             {
-                for (int g = 1; g < GameFuncs.data.GameField.GetLength(1)-1; g++)
+                for (int g = 1; g < GameFuncs.data.GameField.GetLength(1)-2; g++)
                 {
                     Control l = game.Controls.Find($"_{i}-{g}", true)[0];
                     Label x = l as Label;
