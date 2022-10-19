@@ -67,8 +67,8 @@ namespace Amoba
             Label lbl = new Label()
             {
                 Name = $"_{x}-{y}",
-                Top = 20 * y,
-                Left = 20 * x,
+                Top = 20 * (y+1),
+                Left = 20 * (x+1),
                 AutoSize = false,
                 Size = new Size(20, 20),
                 BorderStyle = BorderStyle.FixedSingle
