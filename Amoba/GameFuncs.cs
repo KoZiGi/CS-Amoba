@@ -2,19 +2,37 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Windows.Forms;
 using System.Threading.Tasks;
 
 namespace Amoba
 {
     class GameFuncs
     {
-        public static Data data = new Data(GenField());
-        
+        public static Data data;
+        public static Game game;
+        public GameFuncs(Game g)
+        {
+            data = new Data(GenField());
+            game = g;
+        }
         public static void Surrender(object sender, EventArgs e)
         {
 
         }
-        //a
+        public static void Add(object sender, EventArgs e)
+        {
+            Label _this = sender as Label;
+            if (_this.Text == "")
+            {
+                int x = Convert.ToInt32(_this.Name.Split('_')[1].Split('-')[0]), y = Convert.ToInt32(_this.Name.Split('_')[1].Split('-')[1]);
+                data.GameField[x, y] = data.IsItX ? "X" : "O";
+                data.IsItX = !data.IsItX;
+                DisplayFuncs.Display(game);
+            }
+            else _this.Cursor = Cursors.No;
+            
+        }
         public static void Reset(object sender, EventArgs e)
         {
 
@@ -35,7 +53,7 @@ namespace Amoba
 
         public bool WinCheck()
         {
-            bool isWin = rowSelect(data.GameField, IsItX);
+            bool isWin = rowSelect(data.GameField, data.IsItX?"X":"O");
             return isWin;
         }
 

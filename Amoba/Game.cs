@@ -13,11 +13,16 @@ namespace Amoba
     public partial class Game : Form
     {
         private static string X, O;
+        private static string p1, p2;
+        private static GameFuncs GameFuncs;
         public Game(string player1, string player2)
         {
             List<string> temp= GameFuncs.PlayerRandomizer(player1, player2);
             X = temp[0];
             O = temp[1];
+            GameFuncs = new GameFuncs(this);
+            p1 = player1;
+            p2 = player2;
             InitializeComponent();
         }
         private void Game_Load(object sender, EventArgs e)
@@ -37,7 +42,7 @@ namespace Amoba
         private void ShowButtons()
         {
             Controls.Add(DisplayFuncs.GenButton(GameFuncs.Surrender, "SurrBtn",  "Feladás", 20, (20 * 22) - 15));
-            Controls.Add(DisplayFuncs.GenButton(GameFuncs.Surrender, "RemakeBtn", "Újrakezdés", Controls.Find("FieldItem2020", true)[0].Left - 40, (20 * 22) - 15));
+            Controls.Add(DisplayFuncs.GenButton(GameFuncs.Surrender, "RemakeBtn", "Újrakezdés", Controls.Find("_19-19", true)[0].Left - 40, (20 * 22) - 15));
         }
         private void ShowLabels()
         {
