@@ -27,6 +27,7 @@ namespace Amoba
             {
                 int x = Convert.ToInt32(_this.Name.Split('_')[1].Split('-')[0]), y = Convert.ToInt32(_this.Name.Split('_')[1].Split('-')[1]);
                 data.GameField[x, y] = data.IsItX ? "X" : "O";
+                data.IsItX = !data.IsItX;
                 DisplayFuncs.Display(game);
             }
             else _this.Cursor = Cursors.No;

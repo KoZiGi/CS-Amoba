@@ -42,7 +42,7 @@ namespace Amoba
         private void ShowButtons()
         {
             Controls.Add(DisplayFuncs.GenButton(GameFuncs.Surrender, "SurrBtn",  "Feladás", 20, (20 * 22) - 15));
-            Controls.Add(DisplayFuncs.GenButton(GameFuncs.Surrender, "RemakeBtn", "Újrakezdés", Controls.Find("_20-20", true)[0].Left - 40, (20 * 22) - 15));
+            Controls.Add(DisplayFuncs.GenButton(GameFuncs.Surrender, "RemakeBtn", "Újrakezdés", Controls.Find("_19-19", true)[0].Left - 40, (20 * 22) - 15));
         }
         private void ShowLabels()
         {

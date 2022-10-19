@@ -12,9 +12,9 @@ namespace Amoba
     {
         public static void Display(Game game)
         {
-            for (int i = 1; i < GameFuncs.data.GameField.GetLength(0)-1; i++)
+            for (int i = 0; i < GameFuncs.data.GameField.GetLength(0); i++)
             {
-                for (int g = 1; g < GameFuncs.data.GameField.GetLength(1)-1; g++)
+                for (int g = 0; g < GameFuncs.data.GameField.GetLength(1); g++)
                 {
                     Control l = game.Controls.Find($"_{i}-{g}", true)[0];
                     Label x = l as Label;
@@ -29,9 +29,9 @@ namespace Amoba
         {
             List<Label> fields = new List<Label>();
 
-            for (int i = 1; i < 21; i++)
+            for (int i = 0; i < 20; i++)
             {
-                for (int g = 1; g < 21; g++)
+                for (int g = 0; g < 20; g++)
                 {
                     fields.Add(GenField(i, g));
                 }
