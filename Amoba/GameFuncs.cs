@@ -18,7 +18,8 @@ namespace Amoba
         }
         public static void Surrender(object sender, EventArgs e)
         {
-
+            MessageBox.Show($"{data.current} feladta a játékot...\n{data.next} nyert!","Feladás");
+            Application.Exit();
         }
         public static void Add(object sender, EventArgs e)
         {
@@ -35,7 +36,7 @@ namespace Amoba
         }
         public static void Reset(object sender, EventArgs e)
         {
-
+            Application.Restart();
         }
 
         private static string[,] GenField()
