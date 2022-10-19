@@ -12,18 +12,18 @@ namespace Amoba
 {
     public partial class Game : Form
     {
+        private static string X, O;
         private static string p1, p2;
         private static GameFuncs GameFuncs;
         public Game(string player1, string player2)
         {
+            List<string> temp= GameFuncs.PlayerRandomizer(player1, player2);
+            X = temp[0];
+            O = temp[1];
             GameFuncs = new GameFuncs(this);
             p1 = player1;
             p2 = player2;
             InitializeComponent();
-        }
-        public void Display()
-        {
-            
         }
         private void Game_Load(object sender, EventArgs e)
         {
@@ -46,8 +46,8 @@ namespace Amoba
         }
         private void ShowLabels()
         {
-            Controls.Add(DisplayFuncs.GenLabel(p1, "p1Lbl", 20 + GetControl("SurrBtn").Left + GetControl("SurrBtn").Width + 10, (20 * 22) - 15));
-            Controls.Add(DisplayFuncs.GenLabel(p2, "p2Lbl", 20 + GetControl("RemakeBtn").Left - GetControl("RemakeBtn").Width - 10, (20 * 22) - 15));
+            Controls.Add(DisplayFuncs.GenLabel(X, "p1Lbl", 20 + GetControl("SurrBtn").Left + GetControl("SurrBtn").Width + 10, (20 * 22) - 15));
+            Controls.Add(DisplayFuncs.GenLabel(O, "p2Lbl", 20 + GetControl("RemakeBtn").Left - GetControl("RemakeBtn").Width - 10, (20 * 22) - 15));
         }
         private Control GetControl(string name)
         {
@@ -59,7 +59,6 @@ namespace Amoba
             ShowButtons();
             ShowLabels();
         }
-
         private void SetSizes()
         {
             Width = 23 * 20;
