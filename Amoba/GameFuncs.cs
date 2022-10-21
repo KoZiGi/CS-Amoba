@@ -81,10 +81,15 @@ namespace Amoba
                     {
                         if (data.GameField[sor,oszlop]!="")
                         {
-                            if (data.GameField[sor, oszlop] == data.GameField[sor, oszlop + 1] && data.GameField[sor, oszlop + 1] == data.GameField[sor, oszlop + 2])
+                            int ok = 0;
+                            for (int i = 1; i <= 5; i++)
                             {
-                                return true;
+                                if (data.GameField[sor,oszlop]== data.GameField[sor, oszlop+i])
+                                {
+                                    ok++;
+                                }
                             }
+                            if (ok==4) return true;
                         }
                     }
                     catch (Exception)
@@ -105,12 +110,12 @@ namespace Amoba
                     {
                         if (data.GameField[sor, oszlop] != "")
                         {
-                            bool ok = true;
-                            for (int i = 1; i < 5; i++)
+                            int ok = 0;
+                            for (int i = 1; i <= 5; i++)
                             {
-                                if(data.GameField[sor, oszlop] != data.GameField[sor+i, oszlop])ok=false;
+                                if(data.GameField[sor, oszlop] == data.GameField[sor+i, oszlop])ok++;
                             }
-                            if (ok) return true;
+                            if (ok==4) return true;
                         }
                     }
                     catch (Exception)

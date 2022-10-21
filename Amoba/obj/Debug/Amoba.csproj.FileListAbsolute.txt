@@ -22,3 +22,16 @@ C:\Users\ginalzsolt\Source\Repos\KoZiGi\CS-Amoba\Amoba\obj\Debug\Amoba.csproj.Ge
 C:\Users\ginalzsolt\Source\Repos\KoZiGi\CS-Amoba\Amoba\obj\Debug\Amoba.csproj.CoreCompileInputs.cache
 C:\Users\ginalzsolt\Source\Repos\KoZiGi\CS-Amoba\Amoba\obj\Debug\Amoba.exe
 C:\Users\ginalzsolt\Source\Repos\KoZiGi\CS-Amoba\Amoba\obj\Debug\Amoba.pdb
+C:\Users\Zsolt\Source\Repos\KoZiGi\CS-Amoba\Amoba\bin\Debug\Amoba.exe.config
+C:\Users\Zsolt\Source\Repos\KoZiGi\CS-Amoba\Amoba\bin\Debug\Amoba.exe
+C:\Users\Zsolt\Source\Repos\KoZiGi\CS-Amoba\Amoba\bin\Debug\Amoba.pdb
+C:\Users\Zsolt\Source\Repos\KoZiGi\CS-Amoba\Amoba\obj\Debug\Amoba.csproj.AssemblyReference.cache
+C:\Users\Zsolt\Source\Repos\KoZiGi\CS-Amoba\Amoba\obj\Debug\Amoba.csproj.SuggestedBindingRedirects.cache
+C:\Users\Zsolt\Source\Repos\KoZiGi\CS-Amoba\Amoba\obj\Debug\Amoba.amobaDes.resources
+C:\Users\Zsolt\Source\Repos\KoZiGi\CS-Amoba\Amoba\obj\Debug\Amoba.Form1.resources
+C:\Users\Zsolt\Source\Repos\KoZiGi\CS-Amoba\Amoba\obj\Debug\Amoba.Game.resources
+C:\Users\Zsolt\Source\Repos\KoZiGi\CS-Amoba\Amoba\obj\Debug\Amoba.Properties.Resources.resources
+C:\Users\Zsolt\Source\Repos\KoZiGi\CS-Amoba\Amoba\obj\Debug\Amoba.csproj.GenerateResource.cache
+C:\Users\Zsolt\Source\Repos\KoZiGi\CS-Amoba\Amoba\obj\Debug\Amoba.csproj.CoreCompileInputs.cache
+C:\Users\Zsolt\Source\Repos\KoZiGi\CS-Amoba\Amoba\obj\Debug\Amoba.exe
+C:\Users\Zsolt\Source\Repos\KoZiGi\CS-Amoba\Amoba\obj\Debug\Amoba.pdb
