@@ -73,23 +73,23 @@ namespace Amoba
         }
         private static bool Horizontal()
         {
-            for (int sor = 0; sor < 20; sor++)
+            for (int oszlop = 0; oszlop < 20; oszlop++)
             {
-                for (int oszlop = 0; oszlop < 20; oszlop++)
+                for (int sor = 0; sor < 20; sor++)
                 {
                     try
                     {
-                        if (data.GameField[sor,oszlop]!="")
+                        if (data.GameField[sor, oszlop] != "")
                         {
                             int ok = 0;
-                            for (int i = 1; i <= 5; i++)
+                            for (int i = 1; i < 5; i++)
                             {
-                                if (data.GameField[sor,oszlop]== data.GameField[sor, oszlop+i])
+                                if (data.GameField[sor, oszlop] == data.GameField[sor+i, oszlop])
                                 {
                                     ok++;
                                 }
                             }
-                            if (ok==4) return true;
+                            if (ok >= 4) return true;
                         }
                     }
                     catch (Exception)
@@ -102,20 +102,24 @@ namespace Amoba
         }
         private static bool Vertical()
         {
-            for (int oszlop = 0; oszlop < 20; oszlop++)
+            
+            for (int sor = 0; sor < 20; sor++)
             {
-                for (int sor = 0; sor < 20; sor++)
+                for (int oszlop = 0; oszlop < 20; oszlop++)
                 {
                     try
                     {
                         if (data.GameField[sor, oszlop] != "")
                         {
                             int ok = 0;
-                            for (int i = 1; i <= 5; i++)
+                            for (int i = 1; i < 5; i++)
                             {
-                                if(data.GameField[sor, oszlop] == data.GameField[sor+i, oszlop])ok++;
+                                if (data.GameField[sor, oszlop] == data.GameField[sor, oszlop + i])
+                                {
+                                    ok++;
+                                }
                             }
-                            if (ok==4) return true;
+                            if (ok >= 4) return true;
                         }
                     }
                     catch (Exception)

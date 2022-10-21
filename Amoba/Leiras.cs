@@ -32,10 +32,11 @@ namespace Amoba
             {
                 Text = "Ready",
                 AutoSize = true,
-                Top = des_lbl.Height + 20,
-                Left = (des_lbl.Width / 2) + 10
+                Top = des_lbl.Size.Height + 20,
+                Left = (des_lbl.Size.Width / 2) 
             };
             mainpageBtn.Click += mainpageBtn_Click;
+            mainpageBtn.Left -= mainpageBtn.Size.Width / 2;
             Controls.Add(mainpageBtn);
         }
 
@@ -43,8 +44,8 @@ namespace Amoba
         {
             Label des_lbl = new Label()
             {
-                Text = fileOperation.desBeolvas("des.txt").Replace(".", ".\n"),
-            AutoSize = true,
+                Text = fileOperation.desBeolvas("des.txt").Replace(". ", ".\n"),
+                AutoSize = true,
                 Top = 10,
                 Left = 10
             };

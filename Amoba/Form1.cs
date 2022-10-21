@@ -35,8 +35,8 @@ namespace Amoba
             {
                 Game jatek = new Game(p1,p2);
                 jatek.Show();
+                Hide();
             }
-            Hide();
         }
     }
 }
