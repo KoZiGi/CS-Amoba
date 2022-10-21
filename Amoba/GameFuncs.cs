@@ -59,8 +59,6 @@ namespace Amoba
                 data.IsItX = !data.IsItX;
                 DisplayFuncs.Display(game);
             }
-            else _this.Cursor = Cursors.No;
-            
         }
         public static void Reset(object sender, EventArgs e)
         {
@@ -80,11 +78,6 @@ namespace Amoba
             return f;
         }
 
-        public static bool WinCheck()
-        {
-            bool isWin = rowSelect(data.GameField, data.IsItX?"X":"O");
-            return isWin;
-        }
 
         private static bool rowSelect(string[,] gameField, string userSymbol)
         {
