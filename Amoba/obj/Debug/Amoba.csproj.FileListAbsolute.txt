@@ -9,7 +9,6 @@ C:\Users\ginalzsolt\source\repos\KoZiGi\CS-Amoba\Amoba\obj\Debug\Amoba.csproj.Ge
 C:\Users\ginalzsolt\source\repos\KoZiGi\CS-Amoba\Amoba\obj\Debug\Amoba.csproj.CoreCompileInputs.cache
 C:\Users\ginalzsolt\source\repos\KoZiGi\CS-Amoba\Amoba\obj\Debug\Amoba.exe
 C:\Users\ginalzsolt\source\repos\KoZiGi\CS-Amoba\Amoba\obj\Debug\Amoba.pdb
-C:\Users\ginalzsolt\source\repos\KoZiGi\CS-Amoba\Amoba\obj\Debug\Amoba.csproj.AssemblyReference.cache
 C:\Users\zickbalazs\Source\Repos\CS-Amoba\Amoba\obj\Debug\Amoba.csproj.AssemblyReference.cache
 C:\Users\zickbalazs\Source\Repos\CS-Amoba\Amoba\obj\Debug\Amoba.Form1.resources
 C:\Users\zickbalazs\Source\Repos\CS-Amoba\Amoba\obj\Debug\Amoba.Game.resources
@@ -22,3 +21,4 @@ C:\Users\zickbalazs\Source\Repos\CS-Amoba\Amoba\obj\Debug\Amoba.pdb
 C:\Users\zickbalazs\Source\Repos\CS-Amoba\Amoba\bin\Debug\Amoba.exe.config
 C:\Users\zickbalazs\Source\Repos\CS-Amoba\Amoba\bin\Debug\Amoba.exe
 C:\Users\zickbalazs\Source\Repos\CS-Amoba\Amoba\bin\Debug\Amoba.pdb
+C:\Users\ginalzsolt\Source\Repos\KoZiGi\CS-Amoba\Amoba\obj\Debug\Amoba.csprojAssemblyReference.cache
