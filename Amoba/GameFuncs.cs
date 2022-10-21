@@ -33,7 +33,7 @@ namespace Amoba
         }
         public static void Surrender(object sender, EventArgs e)
         {
-            MessageBox.Show($"{(data.IsItX ? data.X : data.O)} feladta a játékot...\n{(data.IsItX ? data.O : data.X)} nyert!","Feladás");
+            MessageBox.Show($"{(data.IsItX ? data.X : data.O)} feladta a játékot...\n{(data.IsItX ? data.O : data.X)} nyert!", "Feladás");
             Application.Exit();
         }
         public static void Add(object sender, EventArgs e)
@@ -45,10 +45,10 @@ namespace Amoba
                 data.GameField[x, y] = data.IsItX ? "X" : "O";
                 data.IsItX = !data.IsItX;
                 DisplayFuncs.Display(game);
-                
+
             }
             else _this.Cursor = Cursors.No;
-            
+
         }
         public static void Reset(object sender, EventArgs e)
         {

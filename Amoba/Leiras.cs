@@ -10,19 +10,15 @@ using System.Windows.Forms;
 
 namespace Amoba
 {
-    public partial class amobaDes : Form
+    public partial class Leiras : Form
     {
-        Form1 dx;
-        public amobaDes(Form1 d)
+        public Form1 dx;
+        public Leiras(Form1 d)
         {
             dx = d;
             InitializeComponent();
         }
 
-        private void amobaDes_Load(object sender, EventArgs e)
-        {
-            desLblGen();
-        }
 
         private void mainpageBtn_Click(object sender, EventArgs e)
         {
@@ -43,22 +39,17 @@ namespace Amoba
             Controls.Add(mainpageBtn);
         }
 
-        private void desLblGen()
+        private void Leiras_Load(object sender, EventArgs e)
         {
             Label des_lbl = new Label()
             {
-                Text = makeItPrety(fileOperation.desBeolvas("des.txt")),
-                AutoSize = true,
+                Text = fileOperation.desBeolvas("des.txt").Replace(".", ".\n"),
+            AutoSize = true,
                 Top = 10,
                 Left = 10
             };
             Controls.Add(des_lbl);
             driveBackBtn(des_lbl);
-        }
-            
-        private string makeItPrety(string v)
-        {
-            return v.Replace(".", ".\n");
         }
     }
 }

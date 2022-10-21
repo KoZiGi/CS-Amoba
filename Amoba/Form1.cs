@@ -19,7 +19,7 @@ namespace Amoba
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            amobaDes des= new amobaDes(this);
+            Leiras des= new Leiras(this);
             des.Show();
         }
 

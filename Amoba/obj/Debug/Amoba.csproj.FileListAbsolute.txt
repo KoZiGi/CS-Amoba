@@ -13,8 +13,6 @@ C:\Users\zickbalazs\source\repos\Amoba\Amoba\obj\Debug\Amoba.csprojAssemblyRefer
 C:\Users\ginalzsolt\Source\Repos\KoZiGi\CS-Amoba\Amoba\bin\Debug\Amoba.exe.config
 C:\Users\ginalzsolt\Source\Repos\KoZiGi\CS-Amoba\Amoba\bin\Debug\Amoba.exe
 C:\Users\ginalzsolt\Source\Repos\KoZiGi\CS-Amoba\Amoba\bin\Debug\Amoba.pdb
-C:\Users\ginalzsolt\Source\Repos\KoZiGi\CS-Amoba\Amoba\obj\Debug\Amoba.csprojAssemblyReference.cache
-C:\Users\ginalzsolt\Source\Repos\KoZiGi\CS-Amoba\Amoba\obj\Debug\Amoba.amobaDes.resources
 C:\Users\ginalzsolt\Source\Repos\KoZiGi\CS-Amoba\Amoba\obj\Debug\Amoba.Form1.resources
 C:\Users\ginalzsolt\Source\Repos\KoZiGi\CS-Amoba\Amoba\obj\Debug\Amoba.Game.resources
 C:\Users\ginalzsolt\Source\Repos\KoZiGi\CS-Amoba\Amoba\obj\Debug\Amoba.Properties.Resources.resources
@@ -22,6 +20,7 @@ C:\Users\ginalzsolt\Source\Repos\KoZiGi\CS-Amoba\Amoba\obj\Debug\Amoba.csproj.Ge
 C:\Users\ginalzsolt\Source\Repos\KoZiGi\CS-Amoba\Amoba\obj\Debug\Amoba.csproj.CoreCompileInputs.cache
 C:\Users\ginalzsolt\Source\Repos\KoZiGi\CS-Amoba\Amoba\obj\Debug\Amoba.exe
 C:\Users\ginalzsolt\Source\Repos\KoZiGi\CS-Amoba\Amoba\obj\Debug\Amoba.pdb
+<<<<<<< HEAD
 C:\Users\Zsolt\Source\Repos\KoZiGi\CS-Amoba\Amoba\bin\Debug\Amoba.exe.config
 C:\Users\Zsolt\Source\Repos\KoZiGi\CS-Amoba\Amoba\bin\Debug\Amoba.exe
 C:\Users\Zsolt\Source\Repos\KoZiGi\CS-Amoba\Amoba\bin\Debug\Amoba.pdb
@@ -35,3 +34,19 @@ C:\Users\Zsolt\Source\Repos\KoZiGi\CS-Amoba\Amoba\obj\Debug\Amoba.csproj.Generat
 C:\Users\Zsolt\Source\Repos\KoZiGi\CS-Amoba\Amoba\obj\Debug\Amoba.csproj.CoreCompileInputs.cache
 C:\Users\Zsolt\Source\Repos\KoZiGi\CS-Amoba\Amoba\obj\Debug\Amoba.exe
 C:\Users\Zsolt\Source\Repos\KoZiGi\CS-Amoba\Amoba\obj\Debug\Amoba.pdb
+=======
+D:\asztalk_KD_git\Amoba\Amoba\bin\Debug\Amoba.exe.config
+D:\asztalk_KD_git\Amoba\Amoba\bin\Debug\Amoba.exe
+D:\asztalk_KD_git\Amoba\Amoba\bin\Debug\Amoba.pdb
+D:\asztalk_KD_git\Amoba\Amoba\obj\Debug\Amoba.csprojAssemblyReference.cache
+D:\asztalk_KD_git\Amoba\Amoba\obj\Debug\Amoba.amobaDes.resources
+D:\asztalk_KD_git\Amoba\Amoba\obj\Debug\Amoba.Form1.resources
+D:\asztalk_KD_git\Amoba\Amoba\obj\Debug\Amoba.Game.resources
+D:\asztalk_KD_git\Amoba\Amoba\obj\Debug\Amoba.Properties.Resources.resources
+D:\asztalk_KD_git\Amoba\Amoba\obj\Debug\Amoba.csproj.GenerateResource.cache
+D:\asztalk_KD_git\Amoba\Amoba\obj\Debug\Amoba.csproj.CoreCompileInputs.cache
+D:\asztalk_KD_git\Amoba\Amoba\obj\Debug\Amoba.exe
+D:\asztalk_KD_git\Amoba\Amoba\obj\Debug\Amoba.pdb
+C:\Users\ginalzsolt\Source\Repos\KoZiGi\CS-Amoba\Amoba\obj\Debug\Amoba.Leiras.resources
+C:\Users\ginalzsolt\Source\Repos\KoZiGi\CS-Amoba\Amoba\obj\Debug\Amoba.csproj.AssemblyReference.cache
+>>>>>>> main
