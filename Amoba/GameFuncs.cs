@@ -58,7 +58,14 @@ namespace Amoba
                 io.list_of_moves.Add($"{(data.IsItX ? data.X : data.O)}-(AKA:{(data.IsItX ? "X" : "O")})->X:{x}|Y:{y}");
                 data.IsItX = !data.IsItX;
                 DisplayFuncs.Display(game);
-
+                if (WinCheck())
+                {
+                    MessageBox.Show($"{(data.IsItX ? data.O : data.X)} győzőtt!");
+                    io.WriteFile();
+                    DialogResult r = MessageBox.Show("Mentettem egy fájlt a dokumentumokba. Szeretnéd megnézni?", "Vég", MessageBoxButtons.YesNo);
+                    if (r == DialogResult.Yes) io.OpenFile();
+                    Application.Exit();
+                }
             }
             else _this.Cursor = Cursors.No;
 
@@ -82,6 +89,9 @@ namespace Amoba
         }
         public static bool WinCheck()
         {
+            if (Horizontal()) io.list_of_moves.Add($"{(data.IsItX ? data.O : data.X)} győzőtt horizontális kirakással!");
+            if (Vertical()) io.list_of_moves.Add($"{(data.IsItX ? data.O : data.X)} győzőtt vertikális kirakással!");
+            if (Diagonal() || Diagonal2()) io.list_of_moves.Add($"{(data.IsItX ? data.O : data.X)} győzőtt diagonális kirakással!");
             return Horizontal() || Vertical() || Diagonal() || Diagonal2();
         }
         private static bool Horizontal()
