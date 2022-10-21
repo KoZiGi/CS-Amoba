@@ -69,7 +69,7 @@ namespace Amoba
         }
         public static bool WinCheck()
         {
-            return Horizontal() || Vertical() || Diagonal1() || Diagonal2();
+            return Horizontal() || Vertical() || Diagonal();
         }
         private static bool Horizontal()
         {
@@ -131,15 +131,34 @@ namespace Amoba
             return false;
 
         }
-        private static bool Diagonal1()
+        private static bool Diagonal()
         {
+            for (int i = 0; i < 20; i++)
+            {
+                for (int g = 0; g < 20; g++)
+                {
+                    if (data.GameField[i, g] != "")
+                    {
+                        int counter = 0;
+                        for (int add = 1; add < 5; add++)
+                        {
+                            if (g + add > 19 || add + i > 19) break;
+                            else counter+= (data.GameField[i+add, g+add]==data.GameField[i,g]) ? 1 : 0;
+                        }
+                        if (counter < 4)
+                        {
+                            counter = 0;
+                            for (int add = 1; add < 5; add++)
+                            {
+                                if (g - add < 0 || i + add > 19) break;
+                                else counter+= (data.GameField[i+add, g-add]==data.GameField[i,g]) ? 1 : 0;
+                            }
+                        }
+                        return counter > 3;
+                    }
+                }
+            }
             return false;
-
-        }
-        private static bool Diagonal2()
-        {
-            return false;
-
         }
     }
 }
