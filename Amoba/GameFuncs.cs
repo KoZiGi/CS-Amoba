@@ -69,6 +69,10 @@ namespace Amoba
         }
         public static bool WinCheck()
         {
+            return Horizontal() || Vertical() || Diagonal() || Diagonal2();
+        }
+        private static bool Horizontal()
+        {
             for (int oszlop = 0; oszlop < 20; oszlop++)
             {
                 for (int sor = 0; sor < 20; sor++)
@@ -77,7 +81,15 @@ namespace Amoba
                     {
                         if (data.GameField[sor, oszlop] != "")
                         {
-                            if (Horizontal(sor, oszlop) || Vertical(sor, oszlop) || Diagonal(sor, oszlop) || Diagonal2(sor, oszlop)) return true;
+                            int ok = 0;
+                            for (int i = 1; i < 5; i++)
+                            {
+                                if (data.GameField[sor, oszlop] == data.GameField[sor+i, oszlop])
+                                {
+                                    ok++;
+                                }
+                            }
+                            if (ok >= 4) return true;
                         }
                     }
                     catch (Exception)
@@ -88,55 +100,101 @@ namespace Amoba
             }
             return false;
         }
-        private static bool Horizontal(int sor,int oszlop)
+        private static bool Vertical()
         {
-            int ok = 0;
-            for (int i = 1; i < 5; i++)
+            
+            for (int sor = 0; sor < 20; sor++)
             {
-                if (data.GameField[sor, oszlop] == data.GameField[sor + i, oszlop])
+                for (int oszlop = 0; oszlop < 20; oszlop++)
                 {
-                    ok++;
+                    try
+                    {
+                        if (data.GameField[sor, oszlop] != "")
+                        {
+                            int ok = 0;
+                            for (int i = 1; i < 5; i++)
+                            {
+                                if (data.GameField[sor, oszlop] == data.GameField[sor, oszlop + i])
+                                {
+                                    ok++;
+                                }
+                            }
+                            if (ok >= 4) return true;
+                        }
+                    }
+                    catch (Exception)
+                    {
+                        break;
+                    }
                 }
             }
-            return (ok >= 4);
-        }
-        private static bool Vertical(int sor, int oszlop)
-        {
+            return false;
 
-            int ok = 0;
-            for (int i = 1; i < 5; i++)
-            {
-                if (data.GameField[sor, oszlop] == data.GameField[sor, oszlop + i])
-                {
-                    ok++;
-                }
-            }
-            return (ok >= 4);
+        }
+        // [0,0]=>[20,20]
 
-        }
-        private static bool Diagonal(int sor, int oszlop)
+        private static bool Diagonal()
         {
-            int ok = 0;
-            for (int i = 1; i < 5; i++)
+            for (int sor = 0; sor < 20; sor++)
             {
-                if (data.GameField[sor, oszlop] == data.GameField[sor - i, oszlop + i])
+                for (int oszlop = 0; oszlop < 20; oszlop++)
                 {
-                    ok++;
+                    try
+                    {
+                        if (data.GameField[sor, oszlop] != "")
+                        {
+                            int ok = 0;
+                            for (int i = 1; i < 5; i++)
+                            {
+                                if (data.GameField[sor, oszlop] == data.GameField[sor + i, oszlop + i])
+                                {
+                                    ok++;
+                                }
+                            }
+                            if (ok >= 4) return true;
+                        }
+                    }
+                    catch (Exception)
+                    {
+
+                        break;
+                    }
+                    
                 }
             }
-            return (ok >= 4);
+            return false;
         }
-        private static bool Diagonal2(int sor, int oszlop)
+        // [0,20]=>[20,0]
+        private static bool Diagonal2()
         {
-            int ok = 0;
-            for (int i = 1; i < 5; i++)
+            for (int sor = 0; sor < 20; sor++)
             {
-                if (data.GameField[sor, oszlop] == data.GameField[sor + i, oszlop + i])
+                for (int oszlop = 0; oszlop < 20; oszlop++)
                 {
-                    ok++;
+                    try
+                    {
+                        if (data.GameField[sor, oszlop] != "")
+                        {
+                            int ok = 0;
+                            for (int i = 1; i < 5; i++)
+                            {
+                                if (data.GameField[sor, oszlop] == data.GameField[sor - i, oszlop + i])
+                                {
+                                    ok++;
+                                }
+                            }
+                            if (ok >= 4) return true;
+                        }
+                    }
+                    catch (Exception)
+                    {
+
+                        break;
+                    }
+
                 }
             }
-            return (ok >= 4);
+            return false;
         }
     }
 }
