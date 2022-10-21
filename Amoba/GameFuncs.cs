@@ -67,132 +67,134 @@ namespace Amoba
             }
             return f;
         }
-
         public static bool WinCheck()
         {
-            bool isWin = colSelect(data.GameField, data.IsItX ? "X" : "O");
-            return isWin;
+            return Horizontal() || Vertical() || Diagonal() || Diagonal2();
         }
-
-        private static bool colSelect(string[,] gameField, string userSymbol)
+        private static bool Horizontal()
         {
-            for (int row = 0; row < gameField.GetLength(0); row++) if (rowSelect(gameField, userSymbol, row)) return true;
-            return false;
-        }
-
-        private static bool rowSelect(string[,] gameField, string userSymbol, int row)
-        {
-            for (int col = 0; col < gameField.GetLength(1); col++) if (selectedCheck(gameField, userSymbol, row, col)) return true;
-            return false;
-        }
-
-        private static bool selectedCheck(string[,] gameField, string userSymbol, int row, int col)
-        {
-            if (gameField[row, col] == userSymbol)
+            for (int oszlop = 0; oszlop < 20; oszlop++)
             {
-                if (checkVertical(gameField, userSymbol, row, col)) return true;
-                if (checkHorizontal(gameField, userSymbol, row, col)) return true;
-                if (checkDiagonalLeft(gameField, userSymbol, row, col)) return true;
-                if (checkDiagonalRight(gameField, userSymbol, row, col)) return true;
-            }
-            return false;
-        }
-
-        private static bool checkDiagonalRight(string[,] gameField, string userSymbol, int row, int col)
-        {
-            try
-            {
-                int localCol = col + 1;
-                for (int i = row + 1; i < row + 4; i++)
+                for (int sor = 0; sor < 20; sor++)
                 {
-                    if (gameField[row, i] != userSymbol) return false;
-                    localCol++;
-                }
-            }
-            catch (Exception)
-            {
-                try
-                {
-                    int localCol = col + 1;
-                    for (int i = row - 1; i < row - 4; i--)
+                    try
                     {
-                        if (gameField[row, i] != userSymbol) return false;
-                        localCol++;
+                        if (data.GameField[sor, oszlop] != "")
+                        {
+                            int ok = 0;
+                            for (int i = 1; i < 5; i++)
+                            {
+                                if (data.GameField[sor, oszlop] == data.GameField[sor+i, oszlop])
+                                {
+                                    ok++;
+                                }
+                            }
+                            if (ok >= 4) return true;
+                        }
+                    }
+                    catch (Exception)
+                    {
+                        break;
                     }
                 }
-                catch (Exception)
-                { }
-                return true;
             }
-            return true;
+            return false;
         }
-
-        private static bool checkDiagonalLeft(string[,] gameField, string userSymbol, int row, int col)
+        private static bool Vertical()
         {
-            try
+            
+            for (int sor = 0; sor < 20; sor++)
             {
-                int localCol = col+1;
-                for (int i = row -1; i < row - 4; i--)
+                for (int oszlop = 0; oszlop < 20; oszlop++)
                 {
-                    if (gameField[row, localCol] != userSymbol) return false;
-                    localCol++;
-                } 
-            }
-            catch (Exception)
-            {
-                try
-                {
-                    int localCol = col - 1;
-                    for (int i = row - 1; i < row - 4; i--)
+                    try
                     {
-                        if (gameField[row, localCol] != userSymbol) return false;
-                        localCol--;
+                        if (data.GameField[sor, oszlop] != "")
+                        {
+                            int ok = 0;
+                            for (int i = 1; i < 5; i++)
+                            {
+                                if (data.GameField[sor, oszlop] == data.GameField[sor, oszlop + i])
+                                {
+                                    ok++;
+                                }
+                            }
+                            if (ok >= 4) return true;
+                        }
+                    }
+                    catch (Exception)
+                    {
+                        break;
                     }
                 }
-                catch (Exception)
-                { }
-                return true;
             }
-            return true;
-        }
+            return false;
 
-        private static bool checkHorizontal(string[,] gameField, string userSymbol, int row, int col)
-        {
-            try
-            {
-                for (int i = col + 1; i < col + 4; i++) if (gameField[row, i] != userSymbol) return false;
-            }
-            catch (Exception)
-            {
-                try
-                {
-                    for (int i = col - 1; i < col - 4; i--) if (gameField[row, i] != userSymbol) return false;
-                }
-                catch (Exception)
-                { }
-                return true;
-            }
-            return true;
         }
+        // [0,0]=>[20,20]
 
-        private static bool checkVertical(string[,] gameField, string userSymbol, int row, int col)
+        private static bool Diagonal()
         {
-            try
+            for (int sor = 0; sor < 20; sor++)
             {
-                for (int i = row + 1; i < row + 4; i++) if (gameField[i, col] != userSymbol) return false;
-            }
-            catch (Exception)
-            {
-                try
+                for (int oszlop = 0; oszlop < 20; oszlop++)
                 {
-                    for (int i = row - 1; i < row - 4; i--) if (gameField[i, col] != userSymbol) return false;
+                    try
+                    {
+                        if (data.GameField[sor, oszlop] != "")
+                        {
+                            int ok = 0;
+                            for (int i = 1; i < 5; i++)
+                            {
+                                if (data.GameField[sor, oszlop] == data.GameField[sor + i, oszlop + i])
+                                {
+                                    ok++;
+                                }
+                            }
+                            if (ok >= 4) return true;
+                        }
+                    }
+                    catch (Exception)
+                    {
+
+                        break;
+                    }
+                    
                 }
-                catch (Exception)
-                {}
-                return true;
             }
-            return true;
+            return false;
+        }
+        // [0,20]=>[20,0]
+        private static bool Diagonal2()
+        {
+            for (int sor = 0; sor < 20; sor++)
+            {
+                for (int oszlop = 0; oszlop < 20; oszlop++)
+                {
+                    try
+                    {
+                        if (data.GameField[sor, oszlop] != "")
+                        {
+                            int ok = 0;
+                            for (int i = 1; i < 5; i++)
+                            {
+                                if (data.GameField[sor, oszlop] == data.GameField[sor - i, oszlop + i])
+                                {
+                                    ok++;
+                                }
+                            }
+                            if (ok >= 4) return true;
+                        }
+                    }
+                    catch (Exception)
+                    {
+
+                        break;
+                    }
+
+                }
+            }
+            return false;
         }
     }
 }
-

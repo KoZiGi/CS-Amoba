@@ -35,7 +35,7 @@ namespace Amoba
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 195);
+            this.ClientSize = new System.Drawing.Size(669, 149);
             this.Name = "Leiras";
             this.Text = "Leiras";
             this.Load += new System.EventHandler(this.Leiras_Load);
