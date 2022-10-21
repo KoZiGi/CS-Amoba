@@ -19,28 +19,20 @@ namespace Amoba
                     Control l = game.Controls.Find($"_{i}-{g}", true)[0];
                     Label x = l as Label;
                     x.Text = GameFuncs.data.GameField[i, g];
+                    if (x.Text == "") x.Cursor = Cursors.Hand;
+                    else x.Cursor = Cursors.Default;
                     if (x.Text == "X") x.ForeColor = Color.HotPink;
                     else x.ForeColor = Color.Black;
                     x.TextAlign = ContentAlignment.MiddleCenter;
                 }
             }
-            if (GameFuncs.WinCheck())
-            {
-                MessageBox.Show("Győztünk");
-            }
         }
         public static List<Label> GenFields()
         {
             List<Label> fields = new List<Label>();
-
             for (int i = 0; i < 20; i++)
-            {
                 for (int g = 0; g < 20; g++)
-                {
                     fields.Add(GenField(i, g));
-                }
-            }
-
             return fields;
         }
         public static Button GenButton(EventHandler function, string name, string buttontext, int x, int y)
@@ -65,6 +57,11 @@ namespace Amoba
                 Left = x,
                 Top = y
             };
+        }
+        public static bool OpenFile()
+        {
+            DialogResult dialog = MessageBox.Show("Mentettem egy fájlt a játszmáról a dokumentumokba. Szeretnéd megnyitni?", "Játszma vége", MessageBoxButtons.YesNo);
+            return dialog == DialogResult.Yes;
         }
         private static Label GenField(int x, int y)
         {

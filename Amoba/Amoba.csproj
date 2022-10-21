@@ -62,6 +62,7 @@
       <DependentUpon>Game.cs</DependentUpon>
     </Compile>
     <Compile Include="GameFuncs.cs" />
+    <Compile Include="IO.cs" />
     <Compile Include="Leiras.cs">
       <SubType>Form</SubType>
     </Compile>

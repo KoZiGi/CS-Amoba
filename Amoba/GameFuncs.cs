@@ -11,10 +11,12 @@ namespace Amoba
     {
         public static Data data;
         public static Game game;
+        public static IO io;
         public GameFuncs(Game g)
         {
             data = new Data(GenField());
             game = g;
+            io = new IO($"{DateTime.UtcNow.ToShortDateString().Replace('.', '-')}{ DateTime.UtcNow.ToLongTimeString().Replace(':', '.')}.txt");
         }
         public static List<string> PlayerRandomizer(string p1, string p2)
         {
@@ -33,7 +35,17 @@ namespace Amoba
         }
         public static void Surrender(object sender, EventArgs e)
         {
-            MessageBox.Show($"{(data.IsItX ? data.X : data.O)} feladta a játékot...\n{(data.IsItX ? data.O : data.X)} nyert!", "Feladás");
+            string surrenderer = data.IsItX ? data.X : data.O,
+                   winner = data.IsItX ? data.O : data.X,
+                   message = $"{ surrenderer} feladta a játékot...\n{ winner} nyert!";
+
+            MessageBox.Show(message, "Feladás");
+            io.list_of_moves.Add($"{surrenderer} feladás => {winner} győzött.");
+            io.WriteFile();
+            if (DisplayFuncs.OpenFile())
+            {
+                io.OpenFile();
+            }
             Application.Exit();
         }
         public static void Add(object sender, EventArgs e)
@@ -43,9 +55,17 @@ namespace Amoba
             {
                 int x = Convert.ToInt32(_this.Name.Split('_')[1].Split('-')[0]), y = Convert.ToInt32(_this.Name.Split('_')[1].Split('-')[1]);
                 data.GameField[x, y] = data.IsItX ? "X" : "O";
+                io.list_of_moves.Add($"{(data.IsItX ? data.X : data.O)}-(AKA:{(data.IsItX ? "X" : "O")})->X:{x}|Y:{y}");
                 data.IsItX = !data.IsItX;
                 DisplayFuncs.Display(game);
-
+                if (WinCheck())
+                {
+                    MessageBox.Show($"{(data.IsItX ? data.O : data.X)} győzőtt!");
+                    io.WriteFile();
+                    DialogResult r = MessageBox.Show("Mentettem egy fájlt a dokumentumokba. Szeretnéd megnézni?", "Vég", MessageBoxButtons.YesNo);
+                    if (r == DialogResult.Yes) io.OpenFile();
+                    Application.Exit();
+                }
             }
             else _this.Cursor = Cursors.No;
 
@@ -69,6 +89,9 @@ namespace Amoba
         }
         public static bool WinCheck()
         {
+            if (Horizontal()) io.list_of_moves.Add($"{(data.IsItX ? data.O : data.X)} győzőtt horizontális kirakással!");
+            if (Vertical()) io.list_of_moves.Add($"{(data.IsItX ? data.O : data.X)} győzőtt vertikális kirakással!");
+            if (Diagonal() || Diagonal2()) io.list_of_moves.Add($"{(data.IsItX ? data.O : data.X)} győzőtt diagonális kirakással!");
             return Horizontal() || Vertical() || Diagonal() || Diagonal2();
         }
         private static bool Horizontal()
