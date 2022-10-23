@@ -16,7 +16,7 @@ namespace Amoba
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Game("A", "B"));
+            Application.Run(new Form1());
         }
     }
 }

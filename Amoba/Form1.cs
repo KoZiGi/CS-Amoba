@@ -27,16 +27,19 @@ namespace Amoba
         {
             string p1 = textBox1.Text;
             string p2 = textBox2.Text;
-            if (p1==p2)
-            {
+            if (p1 == p2)
                 MessageBox.Show("Nem egyezhet a két játékos neve","Hibás nevek",MessageBoxButtons.OK,MessageBoxIcon.Error);
-            }
             else
             {
-                Game jatek = new Game(p1,p2);
-                jatek.Show();
-                Hide();
+                if (p1 == "" || p2 == "") MessageBox.Show("Á játékosok neve nem lehet üres!", "Hibás nevek", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                else InitGame(p1, p2);
             }
+        }
+        private void InitGame(string p1, string p2)
+        {
+            Game jatek = new Game(p1, p2);
+            jatek.Show();
+            Hide();
         }
     }
 }

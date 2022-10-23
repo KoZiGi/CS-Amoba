@@ -62,8 +62,8 @@ namespace Amoba
         }
         private void ShowLabels()
         {
-            Controls.Add(DisplayFuncs.GenLabel(GameFuncs.data.X, "p1Lbl", 20 + GetControl("SurrBtn").Left + GetControl("SurrBtn").Width + 10, (20 * 22) - 15));
-            Controls.Add(DisplayFuncs.GenLabel(GameFuncs.data.O, "p2Lbl", 20 + GetControl("RemakeBtn").Left - GetControl("RemakeBtn").Width - 10, (20 * 22) - 15));
+            Controls.Add(DisplayFuncs.GenLabel(GameFuncs.data.X, "p1Lbl", 20 + GetControl("SurrBtn").Left + GetControl("SurrBtn").Width + 10, (20 * 22)-10));
+            Controls.Add(DisplayFuncs.GenLabel(GameFuncs.data.O, "p2Lbl", 20 + GetControl("RemakeBtn").Left - GetControl("RemakeBtn").Width - 10, (20 * 22)-10));
             DisplayFuncs.Display(this);
         }
         private Control GetControl(string name)

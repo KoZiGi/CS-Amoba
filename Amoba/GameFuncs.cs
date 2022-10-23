@@ -50,6 +50,15 @@ namespace Amoba
             }
             Application.Exit();
         }
+        public static bool CheckDraw()
+        {
+            for (int i = 0; i < 20; i++)
+                for (int g = 0; g < 20; g++)
+                    if (data.GameField[i, g] == "")
+                        return false;
+            io.list_of_moves.Add("Nincs több üres hely -> Döntetlen!");
+            return true;
+        }
         public static void Add(object sender, EventArgs e)
         {
             Label _this = sender as Label;
@@ -57,22 +66,30 @@ namespace Amoba
             {
                 int x = Convert.ToInt32(_this.Name.Split('_')[1].Split('-')[0]), y = Convert.ToInt32(_this.Name.Split('_')[1].Split('-')[1]);
                 data.GameField[x, y] = data.IsItX ? "X" : "O";
-                io.list_of_moves.Add($"{(data.IsItX ? data.X : data.O)}-(AKA:{(data.IsItX ? "X" : "O")})->X:{x}|Y:{y}");
+                io.list_of_moves.Add($"{(data.IsItX ? data.X : data.O)}-->X:{x}|Y:{y}");
                 data.IsItX = !data.IsItX;
                 DisplayFuncs.Display(game);
                 DisplayFuncs.ChangePlayerColors();
                 if (WinCheck())
                 {
                     MessageBox.Show($"{(data.IsItX ? data.O : data.X)} győzőtt!");
-                    io.WriteFile();
-                    DialogResult r = MessageBox.Show("Mentettem egy fájlt a dokumentumokba. Szeretnéd megnézni?", "Vég", MessageBoxButtons.YesNo);
-                    if (r == DialogResult.Yes) io.OpenFile();
-                    Application.Exit();
+                    AskToOpenFile();
                 }
-                
+                if (CheckDraw())
+                {
+                    MessageBox.Show("Döntetlen játszma!");
+                    AskToOpenFile();
+                }
             }
             else _this.Cursor = Cursors.No;
 
+        }
+        private static void AskToOpenFile()
+        {
+            io.WriteFile();
+            DialogResult r = MessageBox.Show("Mentettem egy fájlt a dokumentumokba. Szeretnéd megnézni?", "Vég", MessageBoxButtons.YesNo);
+            if (r == DialogResult.Yes) io.OpenFile();
+            Application.Exit();
         }
         public static void Reset(object sender, EventArgs e)
         {

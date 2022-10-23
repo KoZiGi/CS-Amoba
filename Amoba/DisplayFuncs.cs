@@ -73,10 +73,13 @@ namespace Amoba
             Label lbl = new Label()
             {
                 Name = $"_{x}-{y}",
-                Top = 20 * (y+1),
-                Left = 20 * (x+1),
+                BackColor = Color.White,
+                Top = 20 * (y + 1),
+                Left = 20 * (x + 1),
                 AutoSize = false,
+                Font = new Font("Arial", 10, FontStyle.Bold),
                 Size = new Size(20, 20),
+                TextAlign = ContentAlignment.MiddleCenter,
                 BorderStyle = BorderStyle.FixedSingle
             };
             lbl.Click += GameFuncs.Add;

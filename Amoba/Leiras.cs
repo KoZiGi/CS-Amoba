@@ -26,7 +26,7 @@ namespace Amoba
             Close();
         }
 
-        private void driveBackBtn(Label des_lbl)
+        private void returnBackBtn(Label des_lbl)
         {
             Button mainpageBtn = new Button()
             {
@@ -50,7 +50,7 @@ namespace Amoba
                 Left = 10
             };
             Controls.Add(des_lbl);
-            driveBackBtn(des_lbl);
+            returnBackBtn(des_lbl);
         }
     }
 }
