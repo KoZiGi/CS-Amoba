@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using System.Drawing;
 using System.Threading.Tasks;
 
 namespace Amoba
@@ -16,7 +17,7 @@ namespace Amoba
         {
             data = new Data(GenField());
             game = g;
-            io = new IO($"{DateTime.UtcNow.ToShortDateString().Replace('.', '-')}{ DateTime.UtcNow.ToLongTimeString().Replace(':', '.')}.txt");
+            io = new IO($"{DateTime.UtcNow.ToString("yyyy-MM-dd")}T{ DateTime.UtcNow.ToString("HH-mm")}.txt");
         }
         public static List<string> PlayerRandomizer(string p1, string p2)
         {
@@ -25,6 +26,7 @@ namespace Amoba
             {
                 players.Add(p1);
                 players.Add(p2);
+                
             }
             else
             {
@@ -58,6 +60,8 @@ namespace Amoba
                 io.list_of_moves.Add($"{(data.IsItX ? data.X : data.O)}-(AKA:{(data.IsItX ? "X" : "O")})->X:{x}|Y:{y}");
                 data.IsItX = !data.IsItX;
                 DisplayFuncs.Display(game);
+                data.p1Label.ForeColor = data.IsItX ? Color.Red : Color.Black;
+                data.p2Label.ForeColor = data.IsItX ? Color.Black : Color.Red;
                 if (WinCheck())
                 {
                     MessageBox.Show($"{(data.IsItX ? data.O : data.X)} győzőtt!");

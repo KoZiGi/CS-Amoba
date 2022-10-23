@@ -33,6 +33,16 @@ namespace Amoba
         private void Game_Load(object sender, EventArgs e)
         {
             AddControls();
+            SetPlayerLabels();
+        }
+        private void SetPlayerLabels()
+        {
+            Label lbl = Controls.Find("p1Lbl", true)[0] as Label;
+            if (lbl.Text == GameFuncs.data.X)
+            {
+                GameFuncs.data.p1Label = lbl;
+                GameFuncs.data.p2Label = GetControl("p2Lbl") as Label;
+            }
         }
         private void AddControls()
         {

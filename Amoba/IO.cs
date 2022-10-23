@@ -5,6 +5,8 @@ using System.Text;
 using System.Diagnostics;
 using System.Threading.Tasks;
 using System.IO;
+using System.Windows.Forms;
+
 namespace Amoba
 {
     class IO
@@ -20,24 +22,23 @@ namespace Amoba
         {
             try
             {
-                Directory.CreateDirectory(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile) + "\\Documents\\CS-Amoba\\");
-            }
-            catch (Exception) { }
-            try
-            {
+                if (!Directory.Exists(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile) + "\\Documents\\CS-Amoba\\"))
+                {
+                    Directory.CreateDirectory(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile) + "\\Documents\\CS-Amoba\\");
+                }
                 StreamWriter w = new StreamWriter(Filename);
                 foreach (string line in list_of_moves)
                     w.WriteLine(line);
                 w.Close();
             }
             catch (Exception e)
-            {}
+            { MessageBox.Show(e.Message); }
         }
 
         public void OpenFile()
         {
             try
-            { Process.Start(Filename); }
+            { Process.Start("notepad.exe", Filename); }
             catch (Exception)
             {}
         }
