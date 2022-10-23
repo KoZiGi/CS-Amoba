@@ -21,3 +21,16 @@ C:\Users\zickbalazs\source\repos\Amoba\Amoba\obj\Debug\Amoba.csproj.GenerateReso
 C:\Users\zickbalazs\source\repos\Amoba\Amoba\obj\Debug\Amoba.csproj.CoreCompileInputs.cache
 C:\Users\zickbalazs\source\repos\Amoba\Amoba\obj\Debug\Amoba.exe
 C:\Users\zickbalazs\source\repos\Amoba\Amoba\obj\Debug\Amoba.pdb
+C:\Users\Zick\source\repos\CS-Amoba\Amoba\bin\Debug\Amoba.exe.config
+C:\Users\Zick\source\repos\CS-Amoba\Amoba\bin\Debug\Amoba.exe
+C:\Users\Zick\source\repos\CS-Amoba\Amoba\bin\Debug\Amoba.pdb
+C:\Users\Zick\source\repos\CS-Amoba\Amoba\obj\Debug\Amoba.csproj.AssemblyReference.cache
+C:\Users\Zick\source\repos\CS-Amoba\Amoba\obj\Debug\Amoba.csproj.SuggestedBindingRedirects.cache
+C:\Users\Zick\source\repos\CS-Amoba\Amoba\obj\Debug\Amoba.Form1.resources
+C:\Users\Zick\source\repos\CS-Amoba\Amoba\obj\Debug\Amoba.Game.resources
+C:\Users\Zick\source\repos\CS-Amoba\Amoba\obj\Debug\Amoba.Leiras.resources
+C:\Users\Zick\source\repos\CS-Amoba\Amoba\obj\Debug\Amoba.Properties.Resources.resources
+C:\Users\Zick\source\repos\CS-Amoba\Amoba\obj\Debug\Amoba.csproj.GenerateResource.cache
+C:\Users\Zick\source\repos\CS-Amoba\Amoba\obj\Debug\Amoba.csproj.CoreCompileInputs.cache
+C:\Users\Zick\source\repos\CS-Amoba\Amoba\obj\Debug\Amoba.exe
+C:\Users\Zick\source\repos\CS-Amoba\Amoba\obj\Debug\Amoba.pdb

@@ -27,7 +27,7 @@ namespace Amoba
                 }
             }
         }
-        private static void ChangePlayerColors()
+        public static void ChangePlayerColors()
         {
             GameFuncs.data.p1Label.ForeColor = GameFuncs.data.IsItX ? Color.Red : Color.Black;
             GameFuncs.data.p2Label.ForeColor = GameFuncs.data.IsItX ? Color.Black : Color.Red;

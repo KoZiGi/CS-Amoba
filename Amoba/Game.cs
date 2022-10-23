@@ -34,6 +34,7 @@ namespace Amoba
         {
             AddControls();
             SetPlayerLabels();
+            DisplayFuncs.ChangePlayerColors();
         }
         private void SetPlayerLabels()
         {

@@ -60,8 +60,7 @@ namespace Amoba
                 io.list_of_moves.Add($"{(data.IsItX ? data.X : data.O)}-(AKA:{(data.IsItX ? "X" : "O")})->X:{x}|Y:{y}");
                 data.IsItX = !data.IsItX;
                 DisplayFuncs.Display(game);
-                data.p1Label.ForeColor = data.IsItX ? Color.Red : Color.Black;
-                data.p2Label.ForeColor = data.IsItX ? Color.Black : Color.Red;
+                DisplayFuncs.ChangePlayerColors();
                 if (WinCheck())
                 {
                     MessageBox.Show($"{(data.IsItX ? data.O : data.X)} győzőtt!");
@@ -70,6 +69,7 @@ namespace Amoba
                     if (r == DialogResult.Yes) io.OpenFile();
                     Application.Exit();
                 }
+                
             }
             else _this.Cursor = Cursors.No;
 
